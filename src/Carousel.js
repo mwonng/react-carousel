@@ -1,0 +1,49 @@
+import React, { Component } from 'react';
+import './Carousel.css';
+import banner01 from './img/banner-01.png';
+import banner02 from './img/banner-02.png';
+import banner03 from './img/banner-03.png';
+import banner04 from './img/banner-04.png';
+
+class Carousel extends Component {
+  constructor(props) {
+    super(props)
+    const arrayImg = [banner01,banner02,banner03, banner04];
+    this.state = {
+      currentIndex: 0,
+      length: arrayImg.length,
+      arrayImg: arrayImg
+    }
+
+  }
+  nextSlide = () => {
+    const {length, currentIndex} = this.state;
+    currentIndex < length-1 ?
+      this.setState({currentIndex: currentIndex+1}):
+      this.setState({currentIndex: 0})
+  }
+  prevSlide = () => {
+    const {currentIndex, length} = this.state;
+    currentIndex > 0 ?
+      this.setState({currentIndex: currentIndex-1}):
+      this.setState({currentIndex: length-1})
+  }
+
+  render() {
+    const {currentIndex, arrayImg} = this.state
+    const img = arrayImg.map( (a,i) => {
+      return(<li key={i} className={currentIndex === i? "current":"hide"}><img src={a} alt="01"/></li>)
+    })
+    return (
+      <div className="carousel">
+        <ul>
+          {img}
+        </ul>
+          <button className="prevBtn" onClick={this.prevSlide}>prev</button>
+          <button className="nextBtn" onClick={this.nextSlide}>next</button>
+      </div>
+    );
+  }
+}
+
+export default Carousel;

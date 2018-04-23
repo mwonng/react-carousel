@@ -22,11 +22,11 @@ ul > li {
 li.current > img {
   width:100%;
   opacity: 1;
-  -webkit-transition: opacity .5s ease-in;
-  -moz-transition: opacity .5s ease-in;
-   -ms-transition: opacity .5s ease-in;
-    -o-transition: opacity .5s ease-in;
-       transition: opacity .5s ease-in;
+  -webkit-transition: opacity 1.5s ease;
+  -moz-transition: opacity 1.5s ease;
+   -ms-transition: opacity 1.5s ease;
+    -o-transition: opacity 1.5s ease;
+       transition: opacity 1.5s ease;
 }
 
 li.hide > img {
@@ -43,4 +43,49 @@ li.hide > img {
   position: absolute;
   right: 20px;
   top:50px;
+}
+
+
+.prevBtn, .nextBtn {
+  background-color: #003e63;
+  border: solid 2px #001e30;
+  border-radius: 200px;
+  display: block;
+  height: 3.0rem;
+  width: 3.0rem;
+  position: absolute;
+  margin-top: -1.5rem;
+  cursor: pointer;
+  opacity: 0.25;
+  z-index: 20;
+}
+
+span i {
+  margin-top: 13px;
+  border: solid #fff;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 6px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 5px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 5px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }

@@ -10,7 +10,6 @@ export default class Slider extends Component {
   render() {
     return (
       <div className="slider">
-				
       </div>
     );
   }

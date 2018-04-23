@@ -39,8 +39,8 @@ class Carousel extends Component {
         <ul>
           {img}
         </ul>
-          <button className="prevBtn" onClick={this.prevSlide}>prev</button>
-          <button className="nextBtn" onClick={this.nextSlide}>next</button>
+        <span className="prevBtn" onClick={this.prevSlide}> <i className="left"></i> </span>
+        <span className="nextBtn" onClick={this.nextSlide}><i className="right"></i></span>
       </div>
     );
   }

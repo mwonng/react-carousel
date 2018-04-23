@@ -20,7 +20,7 @@ class Carousel extends Component {
   }
   componentDidMount() {
     if (this.state.autoplay === true) {
-      this.interval = setInterval( () => this.nextSlide(), parseInt(this.state.interval));
+      this.interval = setInterval( () => this.nextSlide(), parseInt(this.state.interval,10));
     }
   }
 

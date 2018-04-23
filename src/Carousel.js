@@ -13,10 +13,23 @@ class Carousel extends Component {
     this.state = {
       currentIndex: 0,
       length: arrayImg.length,
-      arrayImg: arrayImg
+      arrayImg: arrayImg,
+      autoplay: props.autoplay,
+      interval: props.interval
     }
-
   }
+  componentDidMount() {
+    if (this.state.autoplay === true) {
+      this.interval = setInterval( () => this.nextSlide(), parseInt(this.state.interval));
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.state.autoplay === true) {
+      clearInterval(this.interval);
+    }
+  }
+
   nextSlide = () => {
     const {length, currentIndex} = this.state;
     currentIndex < length-1 ?

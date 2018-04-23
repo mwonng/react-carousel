@@ -4,6 +4,7 @@ import banner01 from './img/banner-01.png';
 import banner02 from './img/banner-02.png';
 import banner03 from './img/banner-03.png';
 import banner04 from './img/banner-04.png';
+import Indicator from './Indicator'
 
 class Carousel extends Component {
   constructor(props) {
@@ -28,6 +29,11 @@ class Carousel extends Component {
       this.setState({currentIndex: currentIndex-1}):
       this.setState({currentIndex: length-1})
   }
+  dotAction = (index) => {
+    this.setState({
+      currentIndex: index
+    })
+  }
 
   render() {
     const {currentIndex, arrayImg} = this.state
@@ -41,6 +47,7 @@ class Carousel extends Component {
         </ul>
         <span className="prevBtn" onClick={this.prevSlide}> <i className="left"></i> </span>
         <span className="nextBtn" onClick={this.nextSlide}><i className="right"></i></span>
+        <Indicator carouselNum={arrayImg.length} dotAction={this.dotAction} currentIndex={this.state.currentIndex}/>
       </div>
     );
   }

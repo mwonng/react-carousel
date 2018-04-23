@@ -1,0 +1,33 @@
+.indicator {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.dot {
+  margin: 0 5px;
+  display: inline-block;
+  border: rgba(0, 0, 0, .4) solid 2px;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgba(0, 0, 0, 0.2)
+}
+
+.dot:hover {
+  display: inline-block;
+  border-radius: 100%;
+  cursor: pointer;
+  background: white;
+}
+
+.dot.current {
+  margin: 0 5px;
+  display: inline-block;
+  border: rgba(0, 0, 0, .4) solid 2px;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+}
